@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Users\bubbles\Desktop\JGP\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\
+D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTORY\obj\Debug\
 JGP_INVENTORY
 none
 false
 DEBUG;TRACE
-D:\Users\bubbles\Desktop\JGP\JGP_INVENTORY\JGP_INVENTORY\App.xaml
-61840482981
+D:\Users\bubbles\Documents\GitHub\IT3204-Final-Project\JGP_INVENTORY\JGP_INVENTORY\App.xaml
+8999595512
 
-16-693332942
-15-611821716
-View\Login.xaml;View\Page1.xaml;View\Page2.xaml;View\Registration.xaml;View\ViewProducts.xaml;View\Welcome.xaml;
+18-1158997525
+15-1008105013
+View\addProduct.xaml;View\DeleteProduct.xaml;View\Login.xaml;View\Page1.xaml;View\Page2.xaml;View\Registration.xaml;View\ViewProducts.xaml;View\Welcome.xaml;
 
-False
+True
 

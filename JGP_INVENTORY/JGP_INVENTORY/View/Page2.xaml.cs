@@ -23,13 +23,12 @@ namespace JGP_INVENTORY.View
     /// </summary>
     public partial class Page2 : Page
     {
-        // MySqlConnection Connection
-        /*
+       // MySqlConnection Connection
         MySqlConnection conn = new
         MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        */
         ProductViewModel vm = new ProductViewModel();
-
+        addProduct addprod = new addProduct();
+        DeleteProduct delprod = new DeleteProduct();
         public Page2()
         {
             InitializeComponent();
@@ -56,12 +55,11 @@ namespace JGP_INVENTORY.View
             {
                 MessageBox.Show(ex.ToString());
             }
-            /*
             finally
             {
                 conn.Close();
             }
-            */
+            
         }
 
         private void searchBtn_Click(object sender, RoutedEventArgs e)
@@ -76,26 +74,24 @@ namespace JGP_INVENTORY.View
             }
         }
 
-        private void editBtn_Click(object sender, RoutedEventArgs e)
+        private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (dataGridCustomers.SelectedIndex >= 0)
-            {
-                try
-                {
-                    // get the selected's infomation first
-                    /*
-                      vm.CallEditProduct(editName, editQuantity, editPrice, int.Parse(dataGridCustomers.SelectedCells.IndexOf(0x0).ToString());
-                    */
-                }catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                
+            addprod.Show();
+        }
 
-                
-            }
+        private void Close()
+        {
+            throw new NotImplementedException();
+        }
 
-            else { MessageBox.Show("select"); }
+        internal void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            delprod.Show();
         }
     }
 }

@@ -6,34 +6,45 @@
       xmlns:local="clr-namespace:JGP_INVENTORY.View"
       mc:Ignorable="d" 
       d:DesignHeight="300"
-      Title="Page2" Width="471.926">
+      Title="Page2" Width="760">
 
-    <Grid Margin="0,10,-118,0" Height="416" Width="637">
-        <Label Content="PRODUCTS" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" VerticalAlignment="Top" Width="193" FontSize="24" Background="{x:Null}" Foreground="#FFD08805"/>
-        <Grid HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="625">
-            <DataGrid IsReadOnly="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,55,0,45"
-Name="dataGridCustomers" Width="457" ItemsSource="{Binding Path=LoadDataBinding}"
-CanUserResizeRows="False">
+    <Grid Margin="10,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="119*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="28*"/>
+        </Grid.RowDefinitions>
+        <Label Content="PRODUCTS" HorizontalAlignment="Left" Height="62" Margin="34,10,0,0" VerticalAlignment="Top" Width="193" FontSize="24" Background="{x:Null}" Foreground="#FFD08805"/>
+        <Grid HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="684" Margin="0,0,0,-20.4" Grid.RowSpan="3">
+            <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="48,73,0,26"
+Name="dataGridCustomers" Width="608" ItemsSource="{Binding Path=LoadDataBinding}"
+CanUserResizeRows="False" Background="#FFF6F6E2" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" AlternatingRowBackground="#FFF6F6E2" RowBackground="#FFE5CF0B">
+
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=prod_id}" Header="Product Id" Width="100"
-IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=prod_name}" Header="Product Name" Width="100"
+IsReadOnly="True" >
+                        <DataGridTextColumn.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="Black" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGridTextColumn.Foreground>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=prod_name}" Header="Product Name" Width="200"
 IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=prod_qty}" Header="Product Quantity" Width="150"
 IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=prod_price}" Header="Product Price" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=prod_price}" Header="Product Price" Width="150" IsReadOnly="True" />
                 </DataGrid.Columns>
             </DataGrid>
+
             <Button Content="Load Data" Height="23" HorizontalAlignment="Left" Margin="399,25,0,0"
 Name="btnloaddata" VerticalAlignment="Top" Width="68" Click="btnloaddata_Click"/>
-            <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="166,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+            <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="186,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
             <Button x:Name="searchBtn" Content="Search" HorizontalAlignment="Left" Margin="307,25,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="searchBtn_Click"/>
-            <TextBox x:Name="editName" HorizontalAlignment="Left" Height="23" Margin="48,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Text="Name"/>
-            <TextBox x:Name="editQuantity" HorizontalAlignment="Left" Height="23" Margin="150,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Text="Quantity"/>
-            <TextBox x:Name="editPrice" Height="23" Margin="290,277,232,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Price"/>
-            <Label Content="Edit:" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Cursor="None"/>
-            <Button x:Name="editBtn" Content="Edit" HorizontalAlignment="Left" Margin="399,277,0,0" VerticalAlignment="Top" Width="68" Height="23" Click="editBtn_Click" />
+            <Button x:Name="addBtn" Content="Add" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="75" Click="addBtn_Click"/>
         </Grid>
+        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Margin="92,25,0,0" Height="20" Click="deleteBtn_Click"/>
 
     </Grid>
 </Page>
